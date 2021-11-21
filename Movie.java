@@ -31,7 +31,7 @@ public class Movie {
         Movie result[]= new Movie[movies.length];
         int k=0;
         for(Movie m: movies){
-            if(m.getRating().equals("PG"))
+            if(m.getRating().contains("PG"))
                 result[k++] = m;
         }
         return Arrays.copyOfRange(result, 0, k);
@@ -45,12 +45,13 @@ public class Main {
     public static void main(String[] args) {
 
         // creating and initializing three Movie objects
-        Movie m1 = new Movie("Indiana Jones", "Raiders", "PG");
-        Movie m2 = new Movie("Deadpool", "Fox", "R");
-        Movie m3 = new Movie("Life Of Pi", "20th Century", "PG");
+        Movie m1= new Movie("Casino Royale", "Eon Productions", "PG-13");
+        Movie m2 = new Movie("Indiana Jones", "Raiders", "PG");
+        Movie m3 = new Movie("Deadpool", "Fox", "R");
+        Movie m4 = new Movie("Life Of Pi", "20th Century", "PG");
 
         // creating and initializing a Movie array
-        Movie[] movies = {m1, m2, m3};
+        Movie[] movies = {m1, m2, m3, m4};
 
         // calling the getPg() method
         Movie[] pgRatedMovies = m1.getPg(movies);
